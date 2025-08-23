@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+* {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #94a3b8 transparent; /* thumb | track */
+}
+
+/* For Chrome, Safari and Edge */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background-color 0.3s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--highlight); /* Tailwind slate-500 */
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("./assets/fonts/Poppins.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: JetBrains;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("./assets/fonts/JetBrainsMono.ttf") format("ttf");
+}
+
+@theme inline {
+  /* Background */
+  --color-background-dark: var(--bg-dark);
+  --color-background: var(--bg);
+  --color-background-light: var(--bg-light);
+
+  /* Text */
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-highlight: var(--highlight);
+  --color-border: var(--border);
+  --color-border-muted: var(--border-muted);
+
+  /* variants */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-success: var(--success);
+  --color-info: var(--info);
+
+  /* font */
+  --font-poppins: var(--poppins);
+  --font-jetbrains: var(--jetbrains);
+}
+:root {
+  --bg-dark: oklch(0.1 0.025 264);
+  --bg: oklch(0.15 0.025 264);
+  --bg-light: oklch(0.2 0.025 264);
+  --text: oklch(0.96 0.05 264);
+  --text-muted: oklch(0.76 0.05 264);
+  --highlight: oklch(0.5 0.05 264);
+  --border: oklch(0.4 0.05 264);
+  --border-muted: oklch(0.3 0.05 264);
+  --primary: oklch(0.76 0.1 264);
+  --secondary: oklch(0.76 0.1 84);
+  --danger: oklch(0.59 0.23 23.1);
+  --warning: oklch(0.7 0.05 100);
+  --success: oklch(0.7 0.05 160);
+  --info: oklch(0.7 0.05 260);
+
+  /* font */
+  --poppins: "Poppins", "poppins", sans-serif;
+  --jetbrains: "JetBrains Mono", "jetbrains mono", sans-serif;
+}
+
+@layer base {
+  * {
+    @apply p-0 m-0;
+  }
+  body {
+    @apply bg-background-dark text-text font-poppins select-none;
+  }
+}

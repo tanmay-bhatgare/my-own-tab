@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "My Own Tab",
+  "version": "1.0.0",
+  "description": "My Own Tab, MOT is a minimal developer friendly UI extension to enhance productivity and give relief to your eyes.",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [],
+  "host_permissions": ["https://geek-quote-api.vercel.app/v1/quote"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["fonts/Poppins/Poppins-Regular.ttf"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "logo.png",
+    "32": "logo.png",
+    "64": "logo.png",
+    "128": "logo.png"
+  }
+}
