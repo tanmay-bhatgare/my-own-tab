@@ -28,12 +28,12 @@
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="./public/images/full.png" alt="Full Interface Screenshot" width="600"/>
+  <img src="./public/images/full.png" alt="Full Interface Screenshot" width="full"/>
   <br/>
   <em>Full Interface View</em>
   <br/><br/>
   
-  <img src="./public/images/sidebar.png" alt="Sidebar Screenshot" width="600"/>
+  <img src="./public/images/sidebar.png" alt="Sidebar Screenshot" width="full"/>
   <br/>
   <em>Shortcuts Sidebar</em>
 </div>
