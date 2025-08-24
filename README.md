@@ -86,17 +86,17 @@
    pnpm build
    ```
 
-2. **Load in Chrome**
-   - Open Chrome and navigate to `chrome://extensions/`
+2. **Load in Browser**
+   - Open Chrome and navigate to `chrome://extensions/` or `edge://extensions/` for Edge
    - Enable **Developer mode** (toggle in top-right corner)
    - Click **Load unpacked**
    - Select the `dist` folder from your project directory
    - Done! ✅
 
-### Method 2: Edge Installation
-
-- Navigate to `edge://extensions/`
-- Follow the same steps as Chrome installation
+# Method 2: Installation for Non-techy
+1. **Install Extension file**
+- head to [GitHub Releases](https://github.com/tanmay-bhatgare/my-own-tab/releases) and install `.crx` file
+- just drag and drop it to chrome extension window and all done.
 
 ---
 
