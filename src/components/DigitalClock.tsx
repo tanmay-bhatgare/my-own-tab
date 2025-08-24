@@ -45,10 +45,10 @@ const DigitalClock: React.FC = () => {
   return (
     <div className="flex items-center justify-center w-full rounded-2xl">
       <div className="px-8 py-6 rounded-2xl bg-none flex flex-col items-center">
-        <h1 className="text-6xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold select-none text-text tracking-wide">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold select-none text-text tracking-wide">
           {time}
         </h1>
-        <h1 className="text-text-muted text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium select-none tracking-wide">
+        <h1 className="text-text-muted text-base md:text-lg lg:text-xl xl:text-2xl font-medium select-none tracking-wide">
           {date}
         </h1>
       </div>

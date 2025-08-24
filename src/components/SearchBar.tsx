@@ -1,6 +1,6 @@
 import { ArrowRightToLine, Search } from "lucide-react";
 import SearchOptionButton from "./SearchOptionButton";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 const parseQuery = (query: string) => {
   return new URLSearchParams({ q: query.trim() }).toString();
@@ -24,10 +24,16 @@ const SearchBar = () => {
     window.location.href = url;
   };
 
+  const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="flex items-center justify-between gap-2 rounded-md ring-1 ring-text px-2 py-1 shadow-lg w-xl mt-6">
-        <div className="flex items-center gap-2">
+    <div className="w-full px-2 flex flex-col items-center gap-2">
+      <div className="w-full max-w-xl flex items-center justify-between gap-2 rounded-md ring-1 ring-text px-2 py-1 shadow-lg mt-6 flex-wrap md:flex-nowrap">
+        <div className="w-full flex items-center gap-2">
           <Search className="w-6 h-6 text-text" />
           <input
             ref={inputRef}
@@ -35,16 +41,17 @@ const SearchBar = () => {
             type="text"
             placeholder="Search..."
             className="text-lg outline-none"
+            onKeyDown={handleEnter}
           />
         </div>
         <button
           onClick={handleSearch}
-          className="border-2 bg-background-light/90 backdrop-blur-lg border-border rounded-xl cursor-pointer p-2"
+          className="border-2 bg-background-light/90 backdrop-blur-lg border-border rounded-xl cursor-pointer p-2 hidden md:block"
         >
           <ArrowRightToLine className="w-6 h-6 text-text self-end" />
         </button>
       </div>
-      <div className="w-full h-max p-2 flex items-center justify-between gap-2">
+      <div className="w-full max-w-xl h-max p-2 flex items-center justify-between flex-wrap gap-2">
         {options.map((opt) => (
           <div
             key={opt.value}
