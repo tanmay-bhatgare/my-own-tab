@@ -35,6 +35,11 @@ const EditShortcut = ({
   };
 
   const handleAddShortcut = (_shortcut: ShortcutType) => {
+    console.log(shortcuts.length);
+    if (shortcuts.length > 4) {
+      alert("Can't add more than 5 shortcuts.");
+      return;
+    }
     try {
       const exists = shortcuts.some((item) => item.url === shortcut.url);
 

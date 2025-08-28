@@ -4,6 +4,7 @@ import Notes from "./components/Notes";
 import RandomQuote from "./components/RandomQuote";
 import SearchBar from "./components/SearchBar";
 import { Shortcuts } from "./components/Shortcuts";
+import Todo from "./components/Todo";
 
 const App = () => {
   return (
@@ -40,7 +41,9 @@ const App = () => {
 
             {/* Right column */}
             <div className="w-full sm:w-1/2 flex flex-col items-center">
-              <div className="w-full h-96 bg-red-300">
+              <div className="w-full flex flex-col sm:flex-row gap-4 p-2">
+                <Todo />
+                <Todo />
               </div>
             </div>
           </div>
