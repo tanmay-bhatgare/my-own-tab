@@ -63,7 +63,7 @@ export default function Sheet({
         </div>
 
         {/* Body */}
-        <div className="w-full h-full p-2">{content}</div>
+        {isOpen && <div className="w-full h-full p-2">{content}</div>}
       </div>
     </div>
   );
