@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Sheet from "./Sheet";
 import EditShortcut from "./EditShortcut";
+import { Pencil } from "lucide-react";
 
 export type ShortcutType = {
   name: string;
@@ -14,7 +15,7 @@ function getDomain(url: string) {
       hostname = hostname.slice(4);
     }
     return hostname;
-  } catch (e) {
+  } catch {
     console.error("Invalid URL:", url);
     return null;
   }
@@ -66,15 +67,20 @@ export const Shortcuts = () => {
               }
             />
           </div>
-          <span className="text-sm font-semibold truncate w-20 text-center">{shortcut.name}</span>
+          <span className="text-sm font-semibold truncate w-20 text-center">
+            {shortcut.name}
+          </span>
         </div>
       ))}
 
       {/* Add button */}
       <Sheet
+        icon={Pencil}
+        title="Edit"
         content={
           <EditShortcut shortcuts={shortcuts} setShortcuts={setShortcuts} />
         }
+        width={"w-96"}
       />
     </div>
   );

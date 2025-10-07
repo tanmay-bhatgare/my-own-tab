@@ -97,3 +97,7 @@
     @apply bg-background-dark text-text font-poppins select-none;
   }
 }
+
+.selectable {
+  user-select: text !important;
+}

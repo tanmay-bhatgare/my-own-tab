@@ -43,7 +43,7 @@ const RandomQuote = () => {
       });
     } else {
       console.warn(
-        "Chrome API not available — are you running outside extension?"
+        "RQ: Chrome API not available — are you running outside extension?"
       );
     }
   };

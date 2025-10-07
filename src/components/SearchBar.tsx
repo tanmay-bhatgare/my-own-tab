@@ -27,14 +27,14 @@ const SearchBar = () => {
   return (
     <div className="flex flex-col items-center gap-2">
       <div className="flex items-center justify-between gap-2 rounded-md ring-1 ring-text px-2 py-1 shadow-lg w-xl mt-6">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-1">
           <Search className="w-6 h-6 text-text" />
           <input
             ref={inputRef}
             id="search"
             type="text"
             placeholder="Search..."
-            className="text-lg outline-none"
+            className="text-lg outline-none w-full"
           />
         </div>
         <button

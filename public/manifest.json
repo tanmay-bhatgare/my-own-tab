@@ -7,7 +7,10 @@
     "newtab": "index.html"
   },
   "permissions": [],
-  "host_permissions": ["https://geek-quote-api.vercel.app/v1/quote"],
+  "host_permissions": [
+    "https://geek-quote-api.vercel.app/v1/quote",
+    "https://feeds.bbci.co.uk/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },

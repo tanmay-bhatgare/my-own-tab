@@ -1,9 +1,12 @@
+import { Newspaper } from "lucide-react";
 import DigitalClock from "./components/DigitalClock";
 import DotGrid from "./components/DotGrid/DotGrid";
 import Notes from "./components/Notes";
 import RandomQuote from "./components/RandomQuote";
 import SearchBar from "./components/SearchBar";
+import Sheet from "./components/Sheet";
 import { Shortcuts } from "./components/Shortcuts";
+import NewsList from "./components/NewsList";
 
 const App = () => {
   return (
@@ -32,6 +35,15 @@ const App = () => {
         <div className="max-w-2xl text-center mt-8">
           <RandomQuote />
         </div>
+
+        {/* News Section */}
+        <Sheet
+          icon={Newspaper}
+          title="What's New!"
+          content={<NewsList />}
+          className="absolute bottom-4 right-4"
+          width="50%"
+        />
       </div>
 
       {/* Footer */}
