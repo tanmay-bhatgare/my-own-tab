@@ -22,7 +22,7 @@ const Notes: React.FC = () => {
     <textarea
       value={text}
       onChange={handleChange}
-      className="w-xl max-h-48 min-h-48 border border-border-muted bg-[rgba(6,11,22,0.1)] backdrop-blur-3xl text-lg p-2 rounded-md font-jetbrains text-text placeholder-text-muted outline-none"
+      className="w-full max-w-xl max-h-48 min-h-48 border border-border-muted bg-[rgba(6,11,22,0.1)] backdrop-blur-3xl text-lg p-2 rounded-md font-jetbrains text-text placeholder-text-muted outline-none"
       placeholder="Any Agenda For Today?"
     />
   );
