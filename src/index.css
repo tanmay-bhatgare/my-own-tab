@@ -94,8 +94,16 @@
     @apply p-0 m-0;
   }
   body {
-    @apply bg-background-dark text-text font-poppins select-none;
+    @apply bg-background-dark text-text select-none;
   }
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  font-family: "Poppins", "poppins", sans-serif;
 }
 
 .selectable {
