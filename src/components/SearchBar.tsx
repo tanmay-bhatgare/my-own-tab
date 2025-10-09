@@ -18,6 +18,10 @@ const SearchBar = () => {
 
   const handleSearch = () => {
     const rawSearchQuery = inputRef.current?.value || "";
+
+    if (!rawSearchQuery) {
+      return;
+    }
     const searchQuery = parseQuery(rawSearchQuery);
     const url = `https://www.${active}.com/search?${searchQuery}`;
 
@@ -40,7 +44,7 @@ const SearchBar = () => {
             id="search"
             type="text"
             placeholder="Search..."
-            className="text-lg outline-none"
+            className="text-lg flex-1 outline-none"
             onKeyDown={handleEnter}
           />
         </div>

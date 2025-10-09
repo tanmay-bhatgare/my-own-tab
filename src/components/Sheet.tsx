@@ -1,3 +1,4 @@
+import { Cross } from "lucide-react";
 import {
   useState,
   type ComponentType,
@@ -58,7 +59,7 @@ export default function Sheet({
             onClick={() => setIsOpen(false)}
             className="text-xl cursor-pointer"
           >
-            ✖
+            <Cross />
           </button>
         </div>
 

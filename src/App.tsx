@@ -8,6 +8,7 @@ import Sheet from "./components/Sheet";
 import { Shortcuts } from "./components/Shortcuts";
 import NewsList from "./components/NewsList";
 import Todo from "./components/Todo";
+import Calendar from "./components/Calendar";
 
 const App = () => {
   return (
@@ -31,7 +32,7 @@ const App = () => {
       {/* Foreground content */}
       <div className="flex-grow flex items-center justify-center">
         <div className="w-full px-4">
-          <div className="mx-auto w-full p-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="mx-auto w-full p-4 flex flex-col xl:flex-row justify-center items-center gap-4">
             {/* Left column */}
             <div className="w-full sm:w-1/2 flex flex-col items-center">
               <DigitalClock />
@@ -43,15 +44,19 @@ const App = () => {
             </div>
 
             {/* Right column */}
-            <div className="w-full sm:w-1/2 flex flex-col items-center">
-              <div className="w-full flex flex-col sm:flex-row gap-4 p-2">
+            <div className="w-full xl:w-1/2 flex flex-col items-center">
+              <div className="w-full flex flex-col items-start justify-center sm:flex-row gap-4 p-2">
                 <Todo />
-                <Todo />
+                <Calendar />
               </div>
             </div>
           </div>
         </div>
+      </div>
 
+      {/* Footer */}
+      <footer className="flex items-center justify-center mb-4">
+        <Shortcuts />
         {/* News Section */}
         <Sheet
           icon={Newspaper}
@@ -60,11 +65,6 @@ const App = () => {
           className="absolute bottom-4 right-4"
           width="50%"
         />
-      </div>
-
-      {/* Footer */}
-      <footer className="flex items-center justify-center mb-4">
-        <Shortcuts />
       </footer>
     </div>
   );
