@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Plus, Trash2 } from "lucide-react";
 
+const STORAGE_KEY = "todos";
+
 type TodoType = {
   id: number;
   name: string;
@@ -13,14 +15,14 @@ const Todo = () => {
   const [todoCount, setTodoCount] = useState<number>(todos.length);
 
   useEffect(() => {
-    const saved = localStorage.getItem("todos");
+    const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       setTodos(JSON.parse(saved));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
   const toggleTodo = (id: number) => {

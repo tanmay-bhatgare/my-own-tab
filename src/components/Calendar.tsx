@@ -1,9 +1,11 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
 import { useState } from "react";
+import { useSheet } from "../hooks/useSheet";
 
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [hoveredDay, setHoveredDay] = useState<number | null>(null);
+  const { openSheetWithData } = useSheet();
 
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
@@ -18,6 +20,15 @@ const Calendar = () => {
 
   const handlePrevMonth = () => setCurrentDate(new Date(year, month - 1, 1));
   const handleNextMonth = () => setCurrentDate(new Date(year, month + 1, 1));
+
+  // helper to format date as dd-mm-yyyy
+  const formatDate = (day: number) => {
+    const date = new Date(year, month, day);
+    const dd = String(date.getDate()).padStart(2, "0");
+    const mm = String(date.getMonth() + 1).padStart(2, "0");
+    const yyyy = date.getFullYear();
+    return `${dd}-${mm}-${yyyy}`;
+  };
 
   return (
     <div className="w-full sm:w-1/2 mx-auto bg-background-light/10 border border-border rounded-xl p-2 backdrop-blur-3xl">
@@ -58,22 +69,27 @@ const Calendar = () => {
         {days.map((day) => (
           <div
             key={day}
-            className={`relative p-2 rounded-lg border cursor-pointer transition 
+            onClick={() =>
+              openSheetWithData("calendar", {
+                value: formatDate(day),
+                callback: null,
+              })
+            }
+            className={`relative flex items-center justify-center p-2 rounded-lg border cursor-pointer transition 
               ${
                 hoveredDay === day
                   ? "bg-background-light border-border"
                   : "hover:bg-border-muted"
               }
             `}
-            // onClick={(first) => { second }}
             onMouseEnter={() => setHoveredDay(day)}
             onMouseLeave={() => setHoveredDay(null)}
           >
-            {day}
+            {hoveredDay === day ? <Plus className="w-6 h-6" /> : day}
 
             {hoveredDay === day && (
-              <div className="w-[100px] absolute -top-15 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-md">
-                A Meeting with US Client
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-md whitespace-nowrap z-10">
+                {formatDate(day)}
               </div>
             )}
           </div>

@@ -10,7 +10,7 @@ function getDomain(url: string) {
       hostname = hostname.slice(4);
     }
     return hostname;
-  } catch (e) {
+  } catch {
     console.error("Invalid URL:", url);
     return null;
   }
@@ -58,7 +58,7 @@ const EditShortcut = ({
 
       setShortcut({ name: "", url: "" });
       setMode("Add"); // reset after edit
-    } catch (err) {
+    } catch {
       alert("Invalid URL, must contain 'https://' at start.");
     }
   };

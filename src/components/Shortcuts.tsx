@@ -3,6 +3,8 @@ import Sheet from "./Sheet";
 import EditShortcut from "./EditShortcut";
 import { Pencil } from "lucide-react";
 
+const STORAGE_KEY = "shortcuts";
+
 export type ShortcutType = {
   name: string;
   url: string;
@@ -26,7 +28,7 @@ export const Shortcuts = () => {
 
   // Load from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem("shortcuts");
+    const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       setShortcuts(JSON.parse(saved));
     } else {
@@ -41,7 +43,7 @@ export const Shortcuts = () => {
 
   // Save to localStorage when changed
   useEffect(() => {
-    localStorage.setItem("shortcuts", JSON.stringify(shortcuts));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(shortcuts));
   }, [shortcuts]);
 
   return (
@@ -75,12 +77,13 @@ export const Shortcuts = () => {
 
       {/* Add button */}
       <Sheet
+        id="edit"
         icon={Pencil}
         title="Edit"
         content={
           <EditShortcut shortcuts={shortcuts} setShortcuts={setShortcuts} />
         }
-        width={"w-96"}
+        width={"300px"}
       />
     </div>
   );
