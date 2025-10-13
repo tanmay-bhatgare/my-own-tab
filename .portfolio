@@ -1,0 +1,12 @@
+{
+  "name": "My Own Tab",
+  "description": "A Minimal & Productive Chrome New Tab Extension Built For Devs By Devs",
+  "tech": [
+    "React",
+    "Tailwindcss",
+    "Chrome Extension",
+    "React Context Management"
+  ],
+  "github": "https://www.github.com/tanmay-bhatgare/my-own-tab",
+  "featured": true
+}

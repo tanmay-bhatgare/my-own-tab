@@ -53,7 +53,11 @@ const NewsList = () => {
   useEffect(() => fetchNews(), []);
   return (
     <div className="h-full flex items-center justify-center pb-12">
-      {news.length <= 0 && <span className="text-2xl font-semibold">Unable to load news at this moment.</span>}
+      {!loading && news.length <= 0 && (
+        <span className="text-2xl font-semibold">
+          Unable to load news at this moment.
+        </span>
+      )}
       {loading ? (
         <div className="w-full h-full flex items-center justify-center">
           <div className="w-28 aspect-square rounded-full border-t-2 border-t-slate-100 animate-spin" />
